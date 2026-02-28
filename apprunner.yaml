@@ -3,7 +3,7 @@ runtime: python3
 build:
   commands:
     build:
-      - echo "CACHE_BUST_20260301_1"  # This forces a fresh build
+      - echo "CACHE_BUST_20260301_1"
       - python -m ensurepip --upgrade
       - python -m pip install --upgrade pip
       - pip install -r requirements.txt
@@ -11,3 +11,12 @@ run:
   command: uvicorn bridge:app --host 0.0.0.0 --port 8080
   network:
     port: 8080
+  env:
+    - name: POE_API_CODE
+      value: "_FJVuf3xlBrJwDtTu0dBpwEuE5udwvLd3dlT8M0k1B4"
+    - name: EXA_API_CODE
+      value: "240e8f25-1b5b-4ffe-8fae-a3cd6209c405"
+    - name: API_KEY
+      value: "_FJVuf3xlBrJwDtTu0dBpwEuE5udwvLd3dlT8M0k1B4"
+    - name: EXA_API_KEY
+      value: "240e8f25-1b5b-4ffe-8fae-a3cd6209c405"
